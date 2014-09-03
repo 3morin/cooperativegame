@@ -64,7 +64,7 @@ EOT
 
 n = cgi["number"].to_i
 
-#x1~xnが送られたか
+#x1～xnが全て送られた=>yes
 xi = "yes"
 (1..n).each do |i|
    allocation = "x" + i.to_s
@@ -73,7 +73,7 @@ xi = "yes"
    end
 end
 
-#vが送られていれば
+#x1～xnが送られていないなら
 if xi == "no" then
 
 #提携値を配列に入れる
@@ -82,8 +82,8 @@ narr = (1..n).to_a
 (1..n).each do |i|
    arr = narr.combinationN(i)
    arr.sort.each do |j|
-      coalition1 = "v" + j.to_s
-      coalition2 = coalition(j)
+      coalition1 = "v" + j.to_s#[1, 2] => v12
+      coalition2 = coalition(j)#[1, 2] => v({1,2})
       game_r << "#{coalition2} = #{cgi[coalition1]}"
    end
 end
@@ -92,15 +92,15 @@ game_r = game_r.join(", ")
 #シャープレイ値を計算
 shapleys = {}
 sv = "("
-(1..n).each do |k|
+(1..n).each do |i|
    i_sum = 0
-   cgi.keys.each do |l|
-      if l =~ /v/ and l =~ /#{k}/ then
-         snumber = l.split(//).size - 1
-         vs = cgi[l].to_f
+   cgi.keys.each do |j|
+      if j =~ /v/ and j =~ /#{i}/ then
+         snumber = j.split(//).size - 1
+         vs = cgi[j].to_f
          if snumber >= 2 then
-            l_i = l.sub(/#{k}/, "")
-            vs_i = cgi[l_i].to_f
+            j_i = j.sub(/#{i}/, "")
+            vs_i = cgi[j_i].to_f
          else
             vs_i = 0
          end
@@ -108,7 +108,7 @@ sv = "("
          i_sum += a_element
       end
    end
-   shapleys[k] = i_sum
+   shapleys[i] = i_sum
    sv += i_sum.to_s + ", "
 end
 sv.rstrip!
