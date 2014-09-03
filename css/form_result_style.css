@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+@import "co_game_common.css";
+
+form{
+margin: 1em 2em 1em;
+}
+
+span#emph{
+font-weight: bold;
+}
+
+span.game{
+font-size: 1em;
+font-weight: bold;
+text-decoration: underline;
+}
+
+ol, li.a_game, ul, li{
+margin-bottom: 0;
+}
+
+li.a_game{
+margin-top: 1em;
+}
+
+ul{
+font-size: 1em;
+list-style-type: none;
+}
+
+ul.analisis{
+margin: 0.5em auto 0 auto;
+}
+
+li.convex, li.shapley, li.allocation{
+margin-right: 1em;
+padding: 0.5em;
+border: thin solid LightSkyBlue;
+}
+
+li.convex{
+border-bottom-color: transparent;
+}
+
+li.allocation{
+border-top-color: transparent;
+}
+
+span.core_r{
+font-size: 0.9em;
+}
+
+span.notcore, span.notconvex, span.noteallo{
+color: red
+}
+
+li.core_subr, li.convex_subr{
+font-size: 0.9em;
+}
+
+form#alloform{
+margin: 0 1em 0 5em;
+border: thin solid LightSkyBlue;
+border-top-color: transparent;
+}
+
+p#allop{
+margin: 0 auto;
+padding: 0.5em;
+}
+
+span.alloexp{
+font-style: oblique;
+}
+
+p#allohidden{
+display: none;
+}
+
+p#error{
+font-size: 2em;
+color: red;
+}
+
+div#another{
+font-size: 0.9em;
+margin: 2em auto auto 2em;
+}
+
+p.anotherexp{
+padding-left: 1em;
+}

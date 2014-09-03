@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@import "co_game_common.css";
+
+form{
+margin: 1em 2em 1em;
+}
+
+div#order{
+margin: 1em auto 2em auto;
+}
+
+div#other{
+margin: auto auto auto 1em;
+}
+
+h3.exph3{
+font-size: 1.2em;
+}
+
+div.content{
+margin: 0.8em 1em 0.8em
+}
+
+span.emph{
+font-weight: bold;
+}
+
+ul{
+margin-top: 0.5em;
+list-style-type: none;
+}
+
+li.convex, li.shapley, li.allocation{
+padding: 0.5em;
+border: thin solid LightSkyBlue;
+}
+
+li.shapley{
+border-top-color: transparent;
+}
+
+
+dt{
+margin: 1em auto 0.5em auto;
+font-weight: bold;
+}
+
+dt.firstcontimg{
+margin-top: 1em;
+}
+
+dt.contimg{
+margin: 0;
+}
+
+dl.subdl{
+margin-left: -1.5em;
+}
+
+dd.subdd{
+padding: 0.5em;
+}
+
+img.big{
+height: 1.5em;
+padding-bottom: 1em;
+}
+
+img.small{
+height: 3em;
+}
+
+span.little, span.much{
+vertical-align: 1.5em;
+}
+
+dt{
+border-bottom: thin solid LightSkyBlue;
+}

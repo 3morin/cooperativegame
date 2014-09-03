@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>協力ゲーム分析君</title>
+<link rel="stylesheet" href="./css/top_style.css" />
+
+</head>
+<body>
+<div id="header">
+
+<h1>協力ゲーム分析君</h1>
+
+<p id="tagline">--シャープレイ値の計算など--</p>
+
+</div><!-- #header -->
+
+<h2>プレイヤーの数を選んでください</h2>
+
+<div id="order">
+
+<form action="form.cgi" method="POST">
+
+<p>
+プレイヤー数：
+<select name="number" size="1">
+   <option value="2">2</option>
+   <option value="3" selected>3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+   <option value="6">6</option>
+   <option value="7">7</option>
+   <option value="8">8</option>
+</select>
+<span class="caution">※2～8人</span>
+</p>
+
+<p>
+<input type="submit" value="次へ">
+</p>
+
+</form>
+
+</div><!-- #order -->
+
+
+<h2>協力ゲーム分析君について</h2>
+<div id="other">
+<h3 class="exph3">機能</h3>
+<div class="content">
+
+<p>プレイヤーの数を選び、各提携値を入力すると、以下を計算・判定し表示します。</p>
+<ul>
+  <li class="convex"><span class="emph">凸ゲームかどうか</span>
+    <ul>
+      <li>凸ゲームでない場合、条件を満たさない提携のペア</li>
+    </ul>
+  </li>
+  <li class="shapley"><span class="emph">シャープレイ値</span>
+    <ul>
+      <li>シャープレイ値がコアに属するか
+        <ul>
+          <li>属さない場合、逸脱のインセンティブを持つ提携</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+さらに配分を入力すると、以下も表示します。</p>
+<ul>
+  <li class="allocation"><span class="emph">その配分がコアに属するか</span>
+    <ul>
+      <li>属さない場合、逸脱のインセンティブを持つ提携</li>
+    </ul>
+  </li>
+</ul>
+</div><!-- #content -->
+
+<h3 class="exph3">用語集</h3>
+<div class="content">
+<dl>
+<dt>協力ゲーム</dt>
+<dd>提携を組んで行動した時の利得や費用等の分配についての理論. 例えばタクシーを相乗りした時の費用分担を考えます.</dd>
+<dd></dd>
+<dt>提携：S</dt>
+<dd>プレイヤーの集合Nの部分集合. N = {1,…,n}. 例えば{1, 2}はプレイヤー1とプレイヤー2による提携です.</dd>
+<dt>提携値：v({S})</dt>
+<dd>提携Sが達成できる利得の最大値. 例えばv({1, 2})はプレイヤー1とプレイヤー2の2人で達成できる利得の最大値を表します.</dd>
+<dt class="firstcontimg">凸ゲーム</dt>
+<dd><img class="big" src="./image/convex.png" alt="v(S)+v(T)  &lt;= v(S∪T)+v(S∩T) if S,T⊆N"><span class="little"> が成立するゲーム.</span></dd>
+<dt class="contimg">配分</dt>
+<dd><span class="much">全体合理性：</span><img class="small" src="./image/total.png" alt="∑_(i∈N) x_i=v(N)"><span class="little"> と個人合理性：</span><img class="big" src="./image/individual.png" alt="x_i &gt;= v({i}) ∀i∈N"><span class="little"> を満たす利得ベクトル.</span>
+  <dl class="subdl">
+  <dt class="contimg">利得ベクトル</dt>
+  <dd class="subdd">各プレイヤーiが利得x_iを得ることを表すベクトル x = (x_1,…,x_n).</dd>
+  </dl>
+</dd>
+<dt class="firstcontimg">コア</dt>
+<dd><span class="much">提携合理性：</span><img class="small" src="./image/coalition.png" alt="∑_(i∈S) x_i &gt;= v(S) ∀S⊂N"><span class="much"> を満たす配分. どの提携も逸脱のインセンティブを持ちません.</span></dd>
+<dt class="contimg">シャープレイ値</dt>
+<dd><span class="much">各プレイヤーiに </span><img class="small" src="./image/shapley.png" alt="s_i=∑_(S:i∈S⊆N) (s-1)!(n-s)!/n! {υ({S})-υ(S-{i})}"><span class="much"> を割り当てる利得ベクトル. ※小文字のsは提携Sのメンバー数.</span></dd>
+<dd>凸ゲームならシャープレイ値はコアに属します.</dd>
+</dl>
+</div>
+
+<h3 class="exph3">参考</h3>
+<div class="content">
+<p>以下の図書・記事を参考にしました。</p>
+<ul>
+<li>中山幹夫(2012)『協力ゲームの基礎と応用』勁草書房.</li>
+<li>松林伸生(2010)「協力ゲームとその応用」『人工知能学会誌』25-1 pp.130-138.</li>
+</ul>
+</div>
+</div><!-- #other -->
+</body>
+</html>
