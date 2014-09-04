@@ -2,6 +2,7 @@
 require "mylib"
 require "mathn"
 
+#階乗　http://d.hatena.ne.jp/gan2/20071004/1191514166
 def fact(n)
 (1..n).to_a.inject(1){|r, i| r * i}
 end
@@ -80,10 +81,10 @@ if xi == "no" then
 game_r = []
 narr = (1..n).to_a
 (1..n).each do |i|
-   arr = narr.combinationN(i)
+   arr = narr.combinationN(i) #組み合わせ計算　http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/42666
    arr.sort.each do |j|
-      coalition1 = "v" + j.to_s#[1, 2] => v12
-      coalition2 = coalition(j)#[1, 2] => v({1,2})
+      coalition1 = "v" + j.to_s #[1, 2] => v12
+      coalition2 = coalition(j) #[1, 2] => v({1,2})
       game_r << "#{coalition2} = #{cgi[coalition1]}"
    end
 end
@@ -262,7 +263,8 @@ File.open("./text/#{filename}.txt", "w") do |fh|
    end
 end
 
-#配分を変数に格納、配分かどうか調べる
+#配分かどうか調べる
+#配分を変数に格納
 alloarr = []
 an_sum = 0
 cgi.keys.sort.each do |i|
